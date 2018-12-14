@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to GUI programming with tkinter — Object-Oriented Programming in Python 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/sphinx_rtd_theme.css" type="text/css">
+  
+
+  
+        <link rel="index" title="Index" href="https://python-textbok.readthedocs.io/en/1.0/genindex.html">
+        <link rel="search" title="Search" href="https://python-textbok.readthedocs.io/en/1.0/search.html">
+    <link rel="top" title="Object-Oriented Programming in Python 1 documentation" href="https://python-textbok.readthedocs.io/en/1.0/index.html">
+        <link rel="next" title="Sorting, searching and algorithm analysis" href="https://python-textbok.readthedocs.io/en/1.0/Sorting_and_Searching_Algorithms.html">
+        <link rel="prev" title="Useful modules in the Standard Library" href="https://python-textbok.readthedocs.io/en/1.0/Useful_Libraries.html"> 
+
+  
+  <script type="text/javascript" async="" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/ga.js"></script><script src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/modernizr.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://python-textbok.readthedocs.io/en/1.0/Introduction_to_GUI_Programming.html">
+
+<link rel="stylesheet" href="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'Introduction_to_GUI_Programming' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/readthedocs-dynamic-include.js"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://python-textbok.readthedocs.io/en/1.0/index.html" class="icon icon-home"> Object-Oriented Programming in Python
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Python_Basics.html">Python basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Variables_and_Scope.html">Variables and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Selection_Control_Statements.html">Selection control statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Collections.html">Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Loop_Control_Statements.html">Loop control statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Errors_and_Exceptions.html">Errors and exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Object_Oriented_Programming.html">Object-oriented programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Packaging_and_Testing.html">Packaging and testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Useful_Libraries.html">Useful modules in the Standard Library</a></li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#"><span class="toctree-expand"></span>Introduction to GUI programming with <code class="docutils literal"><span class="pre">tkinter</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#event-driven-programming">Event-driven programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter-basics"><span class="toctree-expand"></span><code class="docutils literal"><span class="pre">tkinter</span></code> basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#widget-classes">Widget classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#layout-options">Layout options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-events">Custom events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#putting-it-all-together"><span class="toctree-expand"></span>Putting it all together</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#validating-text-entry">Validating text entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-the-total">Updating the total</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#answers-to-exercises"><span class="toctree-expand"></span>Answers to exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#answer-to-exercise-1">Answer to exercise 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-textbok.readthedocs.io/en/1.0/Sorting_and_Searching_Algorithms.html">Sorting, searching and algorithm analysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div id="rtd-bgoce9mb" class="ethical-rtd ethical-dark-theme"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/423/DxeJxtFCtHeL/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/a.png"></a><div class="ethical-text"><a href="https://readthedocs.org/sustainability/click/423/DxeJxtFCtHeL/" rel="nofollow" target="_blank">monday.com</a>: Plan. Organize. Track. In one visual, collaborative space. <a href="https://readthedocs.org/sustainability/click/423/DxeJxtFCtHeL/" rel="nofollow" target="_blank">Try now for free</a>.</div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div><img src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/a.png" style="display: none;"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://python-textbok.readthedocs.io/en/1.0/index.html">Object-Oriented Programming in Python</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://python-textbok.readthedocs.io/en/1.0/index.html">Docs</a> »</li>
+        
+      <li>Introduction to GUI programming with <code class="docutils literal"><span class="pre">tkinter</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://bitbucket.org/confluence/mscitpy/src/1.0/python_notes/Introduction_to_GUI_Programming.rst" class="fa fa-bitbucket"> Edit on Bitbucket</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-gui-programming-with-tkinter">
+<h1>Introduction to GUI programming with <code class="docutils literal"><span class="pre">tkinter</span></code><a class="headerlink" href="#introduction-to-gui-programming-with-tkinter" title="Permalink to this headline">¶</a></h1>
+<p>We have previously seen how to write text-only programs which have a <em>command-line interface</em>, or CLI.  Now we will briefly look at creating a program with a <em>graphical user interface</em>, or GUI.  In this chapter we will use <code class="docutils literal"><span class="pre">tkinter</span></code>, a module in the Python standard library which serves as an interface to Tk, a simple <em>toolkit</em>. There are many other toolkits available, but they often vary across platforms.  If you learn the basics of <code class="docutils literal"><span class="pre">tkinter</span></code>, you should see many similarities should you try to use a different toolkit.</p>
+<p>We will see how to make a simple GUI which handles user input and 
+output.  GUIs often use a form of OO programming which we call <em>event-driven</em>: the program responds to <em>events</em>, which are actions that a user takes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">in some Linux distributions, like Ubuntu and Debian, the <code class="docutils literal"><span class="pre">tkinter</span></code> module is packaged separately to the rest of Python, and must be installed separately.</p>
+</div>
+<div class="section" id="event-driven-programming">
+<h2>Event-driven programming<a class="headerlink" href="#event-driven-programming" title="Permalink to this headline">¶</a></h2>
+<p>Anything that happens in a user interface is an <em>event</em>.  We say that an event is <em>fired</em>
+ whenever the user does something – for example, clicks on a button or 
+types a keyboard shortcut.  Some events could also be triggered by 
+occurrences which are not controlled by the user – for example, a 
+background task might complete, or a network connection might be 
+established or lost.</p>
+<p>Our application needs to monitor, or <em>listen</em> for, all the 
+events that we find interesting, and respond to them in some way if they
+ occur.  To do this, we usually associate certain functions with 
+particular events.  We call a function which performs an action in 
+response to an event an <em>event handler</em> – we <em>bind</em> handlers to events.</p>
+</div>
+<div class="section" id="tkinter-basics">
+<h2><code class="docutils literal"><span class="pre">tkinter</span></code> basics<a class="headerlink" href="#tkinter-basics" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">tkinter</span></code>
+ provides us with a variety of common GUI elements which we can use to 
+build our interface – such as buttons, menus and various kinds of entry 
+fields and display areas.  We call these elements <em>widgets</em>.  We are going to construct a <em>tree</em> of widgets for our GUI – each widget will have a parent widget, all the way up to the <em>root window</em> of our application.  For example, a button or a text field needs to be <em>inside</em> some kind of containing window.</p>
+<p>The widget classes provide us with a lot of default functionality.  
+They have methods for configuring the GUI’s appearance – for example, 
+arranging the elements according to some kind of <em>layout</em> – and 
+for handling various kinds of user-driven events.  Once we have 
+constructed the backbone of our GUI, we will need to customise it by 
+integrating it with our internal application class.</p>
+<p>Our first GUI will be a window with a label and two buttons:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">Tk</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Button</span>
+
+<span class="k">class</span> <span class="nc">MyFirstGUI</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"A simple GUI"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"This is our first GUI!"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Greet"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">greet</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Close"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">master</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Greetings!"</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">my_gui</span> <span class="o">=</span> <span class="n">MyFirstGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Try executing this code for yourself.  You should be able to see a 
+window with a title, a text label and two buttons – one which prints a 
+message in the console, and one which closes the window.  The window 
+should have all the normal properties of any other window you encounter 
+in your window manager – you are probably able to drag it around by the 
+titlebar, resize it by dragging the frame, and maximise, minimise or 
+close it using buttons on the titlebar.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>window manager</em> is the part of your 
+operating system which handles windows.  All the widgets inside a 
+window, like buttons and other controls, may look different in every GUI
+ toolkit, but the way that the window frames and title bars look and 
+behave is determined by your window manager and should always stay the 
+same.</p>
+</div>
+<p>We are using three widgets: <code class="docutils literal"><span class="pre">Tk</span></code> is the class which we use to create the <em>root</em>
+ window – the main window of our application.  Our application should 
+only have one root, but it is possible for us to create other windows 
+which are separate from the main window.</p>
+<p><code class="docutils literal"><span class="pre">Button</span></code> and <code class="docutils literal"><span class="pre">Label</span></code>
+ should be self-explanatory.  Each of them has a parent widget, which we
+ pass in as the first parameter to the constructor – we have put the 
+label and both buttons inside the main window, so they are the main 
+window’s children in the tree.  We use the <code class="docutils literal"><span class="pre">pack</span></code> method on each widget to position it inside its parent – we will learn about different kinds of layout later.</p>
+<p>All three of these widgets can display text (we could also make them 
+display images).  The label is a static element – it doesn’t <em>do</em>
+ anything by default; it just displays something.  Buttons, however, are
+ designed to cause something to happen when they are clicked.  We have 
+used the <code class="docutils literal"><span class="pre">command</span></code>
+ keyword parameter when constructing each button to specify the function
+ which should handle each button’s click events – both of these 
+functions are object methods.</p>
+<p>We didn’t have to write any code to make the buttons fire click 
+events or to bind the methods to them explicitly.  That functionality is
+ already built into the button objects – we only had to provide the 
+handlers.  We also didn’t have to write our own function for closing the
+ window, because there is already one defined as a method on the window 
+object.  We did, however, write our own method for printing a message to
+ the console.</p>
+<p>There are many ways in which we could organise our application class. In this example, our class doesn’t inherit from any <code class="docutils literal"><span class="pre">tkinter</span></code> objects – we use <em>composition</em> to associate our tree of widgets with our class.  We could also use <em>inheritance</em> to extend one of the widgets in the tree with our custom functions.</p>
+<p><code class="docutils literal"><span class="pre">root.mainloop()</span></code>
+ is a method on the main window which we execute when we want to run our
+ application. This method will loop forever, waiting for events from the
+ user, until the user exits the program – either by closing the window, 
+or by terminating the program with a keyboard interrupt in the console.</p>
+<div class="section" id="widget-classes">
+<h3>Widget classes<a class="headerlink" href="#widget-classes" title="Permalink to this headline">¶</a></h3>
+<p>There are many different widget classes built into <code class="docutils literal"><span class="pre">tkinter</span></code> – they should be familiar to you from other GUIs:</p>
+<ul class="simple">
+<li>A <code class="docutils literal"><span class="pre">Frame</span></code>
+ is a container widget which is placed inside a window, which can have 
+its own border and background – it is used to group related widgets 
+together in an application’s layout.</li>
+<li><code class="docutils literal"><span class="pre">Toplevel</span></code> is a container widget which is displayed as a separate window.</li>
+<li><code class="docutils literal"><span class="pre">Canvas</span></code>
+ is a widget for drawing graphics.  In advanced usage, it can also be 
+used to create custom widgets – because we can draw anything we like 
+inside it, and make it interactive.</li>
+<li><code class="docutils literal"><span class="pre">Text</span></code> displays formatted text, which can be editable and can have embedded images.</li>
+<li>A <code class="docutils literal"><span class="pre">Button</span></code> usually maps directly onto a user action – when the user clicks on a button, something should happen.</li>
+<li>A <code class="docutils literal"><span class="pre">Label</span></code> is a simple widget which displays a short piece of text or an image, but usually isn’t interactive.</li>
+<li>A <code class="docutils literal"><span class="pre">Message</span></code> is similar to a <code class="docutils literal"><span class="pre">Label</span></code>, but is designed for longer bodies of text which need to be wrapped.</li>
+<li>A <code class="docutils literal"><span class="pre">Scrollbar</span></code> allows the user to scroll through content which is too large to be visible all at once.</li>
+<li><code class="docutils literal"><span class="pre">Checkbutton</span></code>, <code class="docutils literal"><span class="pre">Radiobutton</span></code>, <code class="docutils literal"><span class="pre">Listbox</span></code>, <code class="docutils literal"><span class="pre">Entry</span></code> and <code class="docutils literal"><span class="pre">Scale</span></code> are different kinds of input widgets – they allow the user to enter information into the program.</li>
+<li><code class="docutils literal"><span class="pre">Menu</span></code> and <code class="docutils literal"><span class="pre">Menubutton</span></code> are used to create pull-down menus.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="layout-options">
+<h2>Layout options<a class="headerlink" href="#layout-options" title="Permalink to this headline">¶</a></h2>
+<p>The GUI in the previous example has a relatively simple layout: we 
+arranged the three widgets in a single column inside the window.  To do 
+this, we used the <code class="docutils literal"><span class="pre">pack</span></code> method, which is one of the three different <em>geometry managers</em> available in <code class="docutils literal"><span class="pre">tkinter</span></code>.
+  We have to use one of the available geometry managers to specify a 
+position for each of our widgets, otherwise the widget will not appear 
+in our window.</p>
+<p>By default, <code class="docutils literal"><span class="pre">pack</span></code>
+ arranges widgets vertically inside their parent container, from the top
+ down, but we can change the alignment to the bottom, left or right by 
+using the optional <code class="docutils literal"><span class="pre">side</span></code>
+ parameter.  We can mix different alignments in the same container, but 
+this may not work very well for complex layouts.  It should work 
+reasonably well in our simple case, however:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">RIGHT</span>
+
+<span class="c1"># (...)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can create quite complicated layouts with <code class="docutils literal"><span class="pre">pack</span></code>
+ by grouping widgets together in frames and aligning the groups to our 
+liking – but we can avoid a lot of this complexity by using the <code class="docutils literal"><span class="pre">grid</span></code> method instead.  It allows us to position widgets in a more flexible way, using a <em>grid layout</em>.  This is the geometry manager recommended for complex interfaces:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">W</span>
+
+<span class="c1"># (...)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We place each widget in a cell inside a table by specifying a row and
+ a column – the default row is the first available empty row, and the 
+default column is <code class="docutils literal"><span class="pre">0</span></code>.</p>
+<p>If a widget is smaller than its cell, we can customise how it is aligned using the <code class="docutils literal"><span class="pre">sticky</span></code> parameter – the possible values are the cardinal directions (<code class="docutils literal"><span class="pre">N</span></code>, <code class="docutils literal"><span class="pre">S</span></code>, <code class="docutils literal"><span class="pre">E</span></code> and <code class="docutils literal"><span class="pre">W</span></code>),
+ which we can combine through addition.  By default, the widget is 
+centered both vertically and horizontally, but we can make it <em>stick</em> to a particular side by including it in the <code class="docutils literal"><span class="pre">sticky</span></code> parameter.  For example, <code class="docutils literal"><span class="pre">sticky=W</span></code> will cause the widget to be left-aligned horizontally, and <code class="docutils literal"><span class="pre">sticky=W+E</span></code> will cause it to be stretched to fill the whole cell horizontally.  We can also specify corners using <code class="docutils literal"><span class="pre">NE</span></code>, <code class="docutils literal"><span class="pre">SW</span></code>, etc..</p>
+<p>To make a widget span multiple columns or rows, we can use the <code class="docutils literal"><span class="pre">columnspan</span></code> and <code class="docutils literal"><span class="pre">rowspan</span></code>
+ options – in the example above, we have made the label span two columns
+ so that it takes up the same space horizontally as both of the buttons 
+underneath it.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Never use both <code class="docutils literal"><span class="pre">pack</span></code> and <code class="docutils literal"><span class="pre">grid</span></code>
+ inside the same window.  The algorithms which they use to calculate 
+widget positions are not compatible with each other, and your program 
+will hang forever as <code class="docutils literal"><span class="pre">tkinter</span></code> tries unsuccessfully to create a widget layout which satisfies both of them.</p>
+</div>
+<p>The third geometry manager is <code class="docutils literal"><span class="pre">place</span></code>,
+ which allows us to provide explicit sizes and positions for widgets.  
+It is seldom a good idea to use this method for ordinary GUIs – it’s far
+ too inflexible and time consuming to specify an absolute position for 
+every element.  There are some specialised cases, however, in which it 
+can come in useful.</p>
+</div>
+<div class="section" id="custom-events">
+<h2>Custom events<a class="headerlink" href="#custom-events" title="Permalink to this headline">¶</a></h2>
+<p>So far we have only bound event handlers to events which are defined in <code class="docutils literal"><span class="pre">tkinter</span></code> by default – the <code class="docutils literal"><span class="pre">Button</span></code>
+ class already knows about button clicks, since clicking is an expected 
+part of normal button behaviour.  We are not restricted to these 
+particular events, however – we can make widgets listen for other events
+ and bind handlers to them, using the <code class="docutils literal"><span class="pre">bind</span></code> method which we can find on every widget class.</p>
+<p>Events are uniquely identified by a sequence name in string format – 
+the format is described by a mini-language which is not specific to 
+Python.  Here are a few examples of common events:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">"&lt;Button-1&gt;"</span></code>, <code class="docutils literal"><span class="pre">"&lt;Button-2&gt;"</span></code> and <code class="docutils literal"><span class="pre">"&lt;Button-3&gt;"</span></code>
+ are events which signal that a particular mouse button has been pressed
+ while the mouse cursor is positioned over the widget in question.  <em>Button 1</em> is the left mouse button, <em>Button 3</em> is the right, and <em>Button 2</em> the middle button – but remember that not all mice have a middle button.</li>
+<li><code class="docutils literal"><span class="pre">"&lt;ButtonRelease-1&gt;"</span></code> indicates that the left button has been released.</li>
+<li><code class="docutils literal"><span class="pre">"&lt;B1-Motion&gt;"</span></code> indicates that the mouse was moved while the left button was pressed (we can use <em>B2</em> or <em>B3</em> for the other buttons).</li>
+<li><code class="docutils literal"><span class="pre">"&lt;Enter&gt;"</span></code> and <code class="docutils literal"><span class="pre">"&lt;Leave&gt;"</span></code> tell us that the mouse curson has entered or left the widget.</li>
+<li><code class="docutils literal"><span class="pre">"&lt;Key&gt;"</span></code> means that any key on the keyboard was pressed.  We can also listen for specific key presses, for example <code class="docutils literal"><span class="pre">"&lt;Return&gt;"</span></code> (the <em>enter</em> key), or combinations like <code class="docutils literal"><span class="pre">"&lt;Shift-Up&gt;"</span></code> (<em>shift-up-arrow</em>).  Key presses of most printable characters are expressed as the bare characters, without brackets – for example, the letter <code class="docutils literal"><span class="pre">a</span></code> is just <code class="docutils literal"><span class="pre">"a"</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">"&lt;Configure&gt;"</span></code> means that the widget has changed size.</li>
+</ul>
+<p>We can now extend our simple example to make the label interactive – 
+let us make the label text cycle through a sequence of messages whenever
+ it is clicked:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">Tk</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">StringVar</span>
+
+<span class="k">class</span> <span class="nc">MyFirstGUI</span><span class="p">:</span>
+    <span class="n">LABEL_TEXT</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"This is our first GUI!"</span><span class="p">,</span>
+        <span class="s2">"Actually, this is our second GUI."</span><span class="p">,</span>
+        <span class="s2">"We made it more interesting..."</span><span class="p">,</span>
+        <span class="s2">"...by making this label interactive."</span><span class="p">,</span>
+        <span class="s2">"Go on, click on it again."</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"A simple GUI"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LABEL_TEXT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">label_index</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;Button-1&gt;"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cycle_label_text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Greet"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">greet</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">greet_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Close"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">master</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Greetings!"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cycle_label_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_index</span> <span class="o">%=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LABEL_TEXT</span><span class="p">)</span> <span class="c1"># wrap around</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LABEL_TEXT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">label_index</span><span class="p">])</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">my_gui</span> <span class="o">=</span> <span class="n">MyFirstGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Updating a label’s text is a little convoluted – we can’t simply 
+update the text using a normal Python string.  Instead, we have to 
+provide the label with a special <code class="docutils literal"><span class="pre">tkinter</span></code> string variable object, and set a new value on the object whenever we want the text in the label to change.</p>
+<p>We have defined a handler which cycles to the next text string in the sequence, and used the <code class="docutils literal"><span class="pre">bind</span></code>
+ method of the label to bind our new handler to left clicks on the 
+label.  It is important to note that this handler takes an additional 
+parameter – an event object, which contains some information about the 
+event.  We could use the same handler for many different events (for 
+example, a few similar events which happen on different widgets), and 
+use this parameter to distinguish between them.  Since in this case we 
+are only using our handler for one kind of event, we will simply ignore 
+the event parameter.</p>
+</div>
+<div class="section" id="putting-it-all-together">
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p>Now we can use all this information to create a simple calculator.  
+We will allow the user to enter a number in a text field, and either add
+ it to or subtract it from a running total, which we will display.  We 
+will also allow the user to reset the total:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">Tk</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Entry</span><span class="p">,</span> <span class="n">IntVar</span><span class="p">,</span> <span class="n">END</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">E</span>
+
+<span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Calculator"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entered_number</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_label_text</span> <span class="o">=</span> <span class="n">IntVar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">total_label_text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Total:"</span><span class="p">)</span>
+
+        <span class="n">vcmd</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">)</span> <span class="c1"># we have to wrap the command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="s2">"key"</span><span class="p">,</span> <span class="n">validatecommand</span><span class="o">=</span><span class="p">(</span><span class="n">vcmd</span><span class="p">,</span> <span class="s1">'%P'</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"+"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"add"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subtract_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"subtract"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Reset"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"reset"</span><span class="p">))</span>
+
+        <span class="c1"># LAYOUT</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">E</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="o">+</span><span class="n">E</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subtract_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="o">+</span><span class="n">E</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">new_text</span><span class="p">:</span> <span class="c1"># the field is being cleared</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">entered_number</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">entered_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">new_text</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"add"</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entered_number</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"subtract"</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entered_number</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># reset</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">my_gui</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We have defined two methods on our class: the first is used to 
+validate the contents of the entry field, and the second is used to 
+update our total.</p>
+<div class="section" id="validating-text-entry">
+<h3>Validating text entry<a class="headerlink" href="#validating-text-entry" title="Permalink to this headline">¶</a></h3>
+<p>Our <code class="docutils literal"><span class="pre">validate</span></code>
+ method checks that the contents of the entry field are a valid integer:
+ whenever the user types something inside the field, the contents will 
+only change if the new value is a valid number.  We have also added a 
+special exception for when the value is nothing, so that the field can 
+be cleared (by the user, or by us).  Whenever the value of the field 
+changes, we store the integer value of the contents in <code class="docutils literal"><span class="pre">self.entered_number</span></code>.
+ We have to perform the conversion at this point anyway to see if it’s a
+ valid integer – if we store the value now, we won’t have to do the 
+conversion again when it’s time to update the total.</p>
+<p>How do we connect this validation function up to our entry field?  We use the <code class="docutils literal"><span class="pre">validatecommand</span></code> parameter.  The function we use for this command must return <code class="docutils literal"><span class="pre">True</span></code> if the entry’s value is allowed to change and <code class="docutils literal"><span class="pre">False</span></code> otherwise, and it <em>must</em> be wrapped using a widget’s <code class="docutils literal"><span class="pre">register</span></code> method (we have used this method on the window object).</p>
+<p>We can also optionally specify arguments which must be passed to the 
+function – to do this, we pass in a tuple containing the function and a 
+series of strings which contain special codes.  When the function is 
+called, these codes will be replaced by different pieces of information 
+about the change which is being made to the entry value.  In our 
+example, we only care about one piece of information: what the new value
+ is going to be.  The code string for this is <code class="docutils literal"><span class="pre">'%P'</span></code>, so we add it into the tuple.</p>
+<p>Another optional parameter which is passed to <code class="docutils literal"><span class="pre">Entry</span></code> is <code class="docutils literal"><span class="pre">validate</span></code>, which specifies when validation should occur.  the default value is <code class="docutils literal"><span class="pre">'none'</span></code> (a string value, not Python’s <code class="docutils literal"><span class="pre">None</span></code>!), which means that no validation should be done.  We have selected <code class="docutils literal"><span class="pre">'key'</span></code>,
+ which will cause the entry to be validated whenever the user types 
+something inside it – but it will also be triggered when we clear the 
+entry from inside our <code class="docutils literal"><span class="pre">update</span></code> method.</p>
+</div>
+<div class="section" id="updating-the-total">
+<h3>Updating the total<a class="headerlink" href="#updating-the-total" title="Permalink to this headline">¶</a></h3>
+<p>We have written a single handler for updating the total, because what
+ we have to do in all three cases is very similar.  However, the way 
+that we update the value depends on which button was pressed – that’s 
+why our handler needs a parameter.  This presents us with a problem – 
+unfortunately, <code class="docutils literal"><span class="pre">tkinter</span></code> has no option for specifying parameters to be passed to button commands (or <em>callbacks</em>).
+  We can solve the problem by wrapping the handler in three different 
+functions, each of which calls the handler with a different parameter 
+when it is called.  We have used lambda functions to create these 
+wrappers because they are so simple.</p>
+<p>Inside the handler, we first update our running total using the 
+integer value of the entry field (which is calculated and stored inside 
+the <code class="docutils literal"><span class="pre">validate</span></code> method – note that we initialise it to zero in the <code class="docutils literal"><span class="pre">__init__</span></code>
+ method, so it’s safe for the user to press the buttons without typing 
+anything).  We know how to update the total because of the parameter 
+which is passed into the handler.</p>
+<p>Once we have updated the total, we need to update the text displayed 
+by the label to show the new total – we do this by setting the new value
+ on the <code class="docutils literal"><span class="pre">IntVar</span></code> linked to the label as its text variable.  This works just like the <code class="docutils literal"><span class="pre">StringVar</span></code> in the previous example, except that an <code class="docutils literal"><span class="pre">IntVar</span></code> is used with integer values, not strings.</p>
+<p>Finally, once we have used the number the user entered, we clear it 
+from the entry field using the entry widget’s delete method by deleting 
+all the characters from the first index (zero) to the end (<code class="docutils literal"><span class="pre">END</span></code> is a constant defined by <code class="docutils literal"><span class="pre">tkinter</span></code>).
+  We should also clear our internal value for the last number to be 
+entered – fortunately, our deletion triggers the validation method, 
+which already resets this number to zero if the entry is cleared.</p>
+</div>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Explain why we needed to use lambdas to wrap the function calls in 
+the last example. Rewrite the button definitions to replace the lambdas 
+with functions which have been written out in full.</li>
+<li>Create a GUI for the guessing game from exercise 3 in the previous chapter.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="answers-to-exercises">
+<h2>Answers to exercises<a class="headerlink" href="#answers-to-exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="answer-to-exercise-1">
+<h3>Answer to exercise 1<a class="headerlink" href="#answer-to-exercise-1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">The lambdas are necessary because we need to pass <em>functions</em>
+ into the button constructors, which the button objects will be able to 
+call later. If we used the bare function calls, we would be calling the 
+functions and passing their return values (in this case, <code class="docutils literal"><span class="pre">None</span></code>) into the constructors.  Here is an example of how we can rewrite this code fragment with full function definitions:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_add</span><span class="p">():</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"add"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_subtract</span><span class="p">():</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"subtract"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update_reset</span><span class="p">():</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">"reset"</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">add_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"+"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_add</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">subtract_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_subtract</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Reset"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">update_reset</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Here is an example program:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">Tk</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Entry</span><span class="p">,</span> <span class="n">StringVar</span><span class="p">,</span> <span class="n">DISABLED</span><span class="p">,</span> <span class="n">NORMAL</span><span class="p">,</span> <span class="n">END</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">E</span>
+
+<span class="k">class</span> <span class="nc">GuessingGame</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Guessing Game"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_guesses</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Guess a number from 1 to 100"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="p">)</span>
+
+        <span class="n">vcmd</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">)</span> <span class="c1"># we have to wrap the command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="s2">"key"</span><span class="p">,</span> <span class="n">validatecommand</span><span class="o">=</span><span class="p">(</span><span class="n">vcmd</span><span class="p">,</span> <span class="s1">'%P'</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Guess"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">guess_number</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Play again"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="o">+</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">W</span><span class="o">+</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">new_text</span><span class="p">:</span> <span class="c1"># the field is being cleared</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">new_text</span><span class="p">)</span>
+            <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">guess</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">=</span> <span class="n">guess</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">guess_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_guesses</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Guess a number from 1 to 100"</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">secret_number</span><span class="p">:</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_guesses</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">'es'</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Congratulations! You guessed the number after </span><span class="si">%d</span><span class="s2"> guess</span><span class="si">%s</span><span class="s2">."</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_guesses</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">guess_button</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">NORMAL</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">secret_number</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Too low! Guess again!"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Too high! Guess again!"</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">secret_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_guesses</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"Guess a number from 1 to 100"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_text</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess_button</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">NORMAL</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_button</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">DISABLED</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">my_gui</span> <span class="o">=</span> <span class="n">GuessingGame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://python-textbok.readthedocs.io/en/1.0/Sorting_and_Searching_Algorithms.html" class="btn btn-neutral float-right" title="Sorting, searching and algorithm analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://python-textbok.readthedocs.io/en/1.0/Useful_Libraries.html" class="btn btn-neutral" title="Useful modules in the Standard Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-6fvfqiuli" class="ethical-rtd"></div></div>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2013, 2014, University of Cape Town and individual 
+contributors. This work is released under the CC BY-SA 4.0 licence.
+      
+        <span class="commit">
+          Revision <code>8e685e710775</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 1.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+        
+        <dd><a href="https://python-textbok.readthedocs.io/en/latest/Introduction_to_GUI_Programming.html">latest</a></dd>
+        
+        
+        
+        <dd><a href="https://python-textbok.readthedocs.io/en/stable/Introduction_to_GUI_Programming.html">stable</a></dd>
+        
+        
+         <strong> 
+        <dd><a href="https://python-textbok.readthedocs.io/en/1.0/Introduction_to_GUI_Programming.html">1.0</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://readthedocs.org/projects/python-textbok/downloads/pdf/1.0/">PDF</a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/python-textbok/downloads/htmlzip/1.0/">HTML</a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/python-textbok/downloads/epub/1.0/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-textbok/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-textbok/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-textbok/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On Bitbucket</dt>
+        <dd>
+          <a href="https://bitbucket.org/confluence/mscitpy/src/1.0/python_notes/Introduction_to_GUI_Programming.rst">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/python-textbok/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/jquery-2.js"></script>
+      <script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/jquery-migrate-1.js"></script>
+      <script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/underscore.js"></script>
+      <script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/doctools.js"></script>
+      <script type="text/javascript" src="Introduction%20to%20GUI%20programming%20with%20tkinter%20%E2%80%94%20Object-Oriented%20Programming%20in%20Python%201%20documentation_files/readthedocs-doc-embed.js"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+
+</body></html>
